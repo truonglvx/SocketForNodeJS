@@ -1,0 +1,29 @@
+<html>
+  <head>
+    <script <script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js"></script>
+  </head>
+  <body>
+    <script>
+      var socket = io.connect();
+      socket.on('date', function(data){
+      	$('#date').text(data.date);
+      });
+
+      // socket.on('sync_data', function(data){
+      // 	$('#fromServer').text(data.sync_data);
+      // });
+
+      // $(document).ready(function(data){
+      // 	$('#text').keypress(function(e){
+      // 		socket.emit('client_data', {'msg' : String.fromCharCode(e.charCode)});
+      // 	});
+      // });
+    </script>
+    <div>This is our socket.html file
+    </div>
+    <div id="date"></div>
+    <textarea id="text"></textarea>
+    <textarea id="fromServer"></textarea>
+  </body>
+</html>
